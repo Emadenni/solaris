@@ -234,7 +234,7 @@ body {
 }
 
 .overlay {
-
+  animation: fadeIn 3s forwards;
   width: 1440px;
   height: 900px;
   position: sticky;
@@ -402,3 +402,37 @@ hr {
 background-color: #0c164d;
 cursor: pointer;
 } 
+
+
+ .preview-container {
+  position: absolute;
+  top: 640px;
+  left: 34%;
+  
+  border-radius: 10px;
+
+  opacity: 0.6;
+
+  
+  font-family: 'Lora', serif;
+  
+
+}
+ 
+.preview {
+  
+  font-size: 50px;
+  color:  white;
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+  
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
