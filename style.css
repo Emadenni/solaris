@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Ropa+Sans&family=Secular+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora&family=Roboto&family=Ropa+Sans&family=Secular+One&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Lora&family=Roboto&family=Roboto+Condensed:wght@300;400&family=Ropa+Sans&family=Secular+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Roboto&family=Roboto+Condensed:wght@300;400&family=Ropa+Sans&family=Secular+One&display=swap");
 
 * {
   box-sizing: border-box;
@@ -12,11 +12,9 @@ body {
   background-color: black;
   width: 100vw;
   height: 100vh;
-  /*  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
 }
+
+/*------------------ general containers ---------------------*/
 
 .mainContainer {
   width: 1440px;
@@ -25,8 +23,51 @@ body {
   background: linear-gradient(to right, #0c164d, #190b22);
   margin: auto;
   overflow: hidden;
-
+  display: none;
+  animation: fadeIn 2s forwards;
 }
+
+.systemContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: flex-start;
+  width: 1160px;
+  height: 900px;
+
+  position: absolute;
+  top: 0px;
+  right: 60px;
+}
+
+.overlay {
+  animation: fadeIn 3s forwards;
+  width: 1440px;
+  height: 900px;
+  position: sticky;
+  background: linear-gradient(to right, #4351a0, #190b22);
+  margin: auto;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.preview-container {
+  transform: translate(930px, -250px);
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+#introContainer {
+  margin: auto;
+  width: 1440px;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*------------------ titles/all pages ---------------------*/
 
 .titlesBox {
   display: flex;
@@ -51,26 +92,53 @@ body {
 }
 .titlesBox > h2 {
   color: #ffd029;
-  
-  font-family: 'Lora', serif;
+
+  font-family: "Lora", serif;
   font-size: 24px;
   font-weight: 100;
   letter-spacing: 0.66em;
   text-align: right;
 }
 
-.systemContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-self: flex-start;
-  width: 1160px;
-  height: 900px;
-
-  position: absolute;
-  top: 0px;
-  right: 60px;
+.titlesBoxOverlay > h1 {
+  color: #ffffff;
+  font-family: "Secular One", sans-serif;
+  font-size: 60px;
+  font-weight: 500;
+  letter-spacing: 0.19em;
+  text-align: right;
+  margin-top: 0px;
 }
+.titlesBoxOverlay > h2 {
+  color: #ffd029;
+  font-family: "Lora", serif;
+  font-size: 24px;
+  font-weight: 100;
+  letter-spacing: 0.6em;
+  text-align: right;
+}
+
+.titlesBoxOverlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  text-align: left;
+  padding-bottom: 18px;
+}
+
+#introContainer > h2 {
+  color: #ffd029;
+
+  font-family: "Lora", serif;
+  font-size: 54px;
+  font-weight: 100;
+  letter-spacing: 0.66em;
+  text-align: right;
+  animation: sparkle 1s infinite;
+}
+
+/*------------------about planets ---------------------*/
 
 .planet {
   border-radius: 50%;
@@ -90,7 +158,7 @@ body {
 .solen {
   background-color: #ffd029;
   border: 40px solid rgb(197, 182, 84);
-  outline: 40px solid rgb(133, 133, 116); 
+  outline: 40px solid rgb(133, 133, 116);
 }
 
 .mercuryMain {
@@ -102,20 +170,19 @@ body {
 .merkurius {
   background-color: #888888;
   border: 40px solid #d5d7db;
-  outline: 40px solid #5d6588; 
+  outline: 40px solid #5d6588;
 }
 
 .venusMain {
   width: 26px;
   height: 26px;
   background-color: #e7cdcd;
-  
 }
 
-.venus{
+.venus {
   background-color: #e7cdcd;
   border: 40px solid #d7d5db;
-  outline: 40px solid #aa95b9; 
+  outline: 40px solid #aa95b9;
 }
 
 .earthMain {
@@ -127,7 +194,7 @@ body {
 .jorden {
   background-color: #428ed4;
   border: 40px solid #1e2f5e;
-  outline: 40px solid #18234e; 
+  outline: 40px solid #18234e;
 }
 
 .marsMain {
@@ -139,7 +206,7 @@ body {
 .mars {
   background-color: #ef5f5f;
   border: 40px solid #8e437e;
-  outline: 40px solid #5b234e; 
+  outline: 40px solid #5b234e;
 }
 
 .jupiterMain {
@@ -148,10 +215,10 @@ body {
   background-color: #e29468;
 }
 
-.jupiter{
+.jupiter {
   background-color: #e29468;
   border: 40px solid #c3995e;
-  outline: 40px solid #fa9949; 
+  outline: 40px solid #fa9949;
 }
 
 .saturnMain {
@@ -161,7 +228,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 .saturnus {
   background-color: #c7aa72;
@@ -169,7 +235,7 @@ body {
   justify-content: center;
   align-items: center;
   border: 40px solid #e0ec86;
-  outline: 40px solid #b2b6ab; 
+  outline: 40px solid #b2b6ab;
 }
 
 .ringImg {
@@ -193,19 +259,18 @@ body {
 .uranus {
   background-color: #c9d4f1;
   border: 40px solid #7b7d82;
-  outline: 40px solid #6983e9; 
+  outline: 40px solid #6983e9;
 }
 
 .neptuneMain {
   width: 66px;
   height: 66px;
   background-color: #7a91a7;
-
 }
 .neptunus {
   background-color: #7a91a7;
   border: 40px solid #a4b4df;
-  outline: 40px solid #636b87; 
+  outline: 40px solid #636b87;
 }
 
 .ring {
@@ -228,26 +293,9 @@ body {
   border-radius: 50%;
   position: absolute;
   top: 50%;
-  left:1%;
+  left: 1%;
   box-shadow: 38px -2px 29px 36px rgba(73, 69, 69, 0.27);
   transform: translate(-50%, -50%) rotate(160deg);
-}
-
-.overlay {
-  animation: fadeIn 3s forwards;
-  width: 1440px;
-  height: 900px;
-  position: sticky;
-  background: linear-gradient(to right, #4351a0, #190b22);
-  margin: auto;
-  overflow: hidden;
-  margin-top: 10px;
-/* display: none; */
-  /* Förhindrat av liveServer */
-/*   background-image: url(..//C:\Users\emanu\OneDrive\Desktop\solaris\backgroundOverlay.png); 
-  background-position: center;
-  background-repeat: no-repeat; 
- */
 }
 
 .planetsImg {
@@ -260,19 +308,10 @@ body {
   padding: 0;
 }
 
-/* .bordersMai {
-  border: 40px solid #1e2f5e;
-  outline: 40px solid #18234e; 
-} */
-
-
-
-
 .planet:hover {
   cursor: pointer;
   scale: 1.1;
   box-shadow: -3px -1px 29px 22px rgba(110, 105, 105, 0.39);
-  
 }
 
 .sun:hover {
@@ -281,39 +320,7 @@ body {
   background-color: rgb(211, 211, 99);
 }
 
-.star {
-  position: absolute;
-  background-color: #ffffff;
-  border-radius: 50%;
-  opacity: 0.2;
-}
-
-.titlesBoxOverlay > h1 {
-  color: #ffffff;
-  font-family: "Secular One", sans-serif;
-  font-size: 60px;
-  font-weight: 500;
-  letter-spacing: 0.19em;
-  text-align: right;
-  margin-top: 0px;
-}
-.titlesBoxOverlay > h2 {
-  color: #ffd029;
-  font-family: 'Lora', serif;
-  font-size: 24px;
-  font-weight: 100;
-  letter-spacing: 0.60em;
-  text-align: right;
-}
-
-.titlesBoxOverlay {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  text-align: left;
- padding-bottom: 18px;
-}
+/*----------------- planet box /overlay----------------- */
 
 .planetInfo {
   display: flex;
@@ -323,7 +330,6 @@ body {
   align-self: flex-start;
   width: 640px;
   height: 682px;
- 
   position: absolute;
   top: 109px;
   right: 416px;
@@ -331,37 +337,33 @@ body {
 }
 
 .planetInfo > p {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 18px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 100;
   margin-top: 33px;
   line-height: 1.7;
 }
 
-
-
 .details > h3 {
   font-family: "Secular One", sans-serif;
   font-size: 18px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 100;
   padding-bottom: 8px;
-} 
+}
 .details > p {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 18px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 100;
   opacity: 0.5;
-} 
+}
 
 .detailsBox {
   width: 640px;
   display: flex;
   gap: 180px;
-  
-  
 }
 
 .detailsType2 {
@@ -374,7 +376,7 @@ body {
 }
 
 .moons {
-align-self: self-start;
+  align-self: self-start;
 }
 
 hr {
@@ -386,46 +388,53 @@ hr {
   opacity: 0.4;
 }
 
+/*----------------- buttons----------------- */
 #goBackBtn {
   position: absolute;
   left: 80%;
   top: 15%;
-  padding: 10px;
+  padding: 4px;
   border-radius: 5px;
   color: yellow;
-  font-size: 30px;
-  background-color: #5866b2;
+  font-size: 38px;
+  font-weight: 900;
+  background-color: transparent;
   width: 60px;
 }
 
 #goBackBtn:hover {
-background-color: #0c164d;
-cursor: pointer;
-} 
-
-
- .preview-container {
-  position: absolute;
-  top: 640px;
-  left: 34%;
-  
-  border-radius: 10px;
-
-  opacity: 0.6;
-
-  
-  font-family: 'Lora', serif;
-  
-
+  background-color: #0c164d;
+  cursor: pointer;
 }
- 
-.preview {
-  
-  font-size: 50px;
-  color:  white;
-  opacity: 0;
+
+#startButton {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  font-family: "Lora", serif;
+  letter-spacing: 3px;
+  font-size: 24px;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 25px;
   animation: fadeIn 3s forwards;
-  
+}
+
+#startButton:hover {
+  background-color: gold;
+  font-weight: 900;
+  color: #342a05;
+}
+
+/*----------------- preview/effects----------------- */
+
+.preview {
+  font-size: 50px;
+  font-family: "Lora", serif;
+  color: white;
+  text-shadow: 7px 7px 5px rgba(206, 205, 45, 0.68);
+  animation: fadeIn 3s forwards;
+  letter-spacing: 8px;
 }
 
 @keyframes fadeIn {
@@ -435,4 +444,23 @@ cursor: pointer;
   to {
     opacity: 1;
   }
+}
+
+@keyframes sparkle {
+  0% {
+    color: #ffd029; /* Colore iniziale */
+  }
+  50% {
+    color: #6f673a; /* Colore a metà animazione */
+  }
+  100% {
+    color: #342a05; /* Colore finale */
+  }
+}
+
+.star {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  opacity: 0.2;
 }
