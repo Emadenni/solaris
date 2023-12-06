@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* --------------------- ASYNC FUNCTION : getPlanetInfo()------------ */
-  //uses the API keys to fetch informations about planets
+  //uses the API keys to fetch informations about planets by the API
 
   async function getPlanetInfo() {
     try {
@@ -95,9 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------------------FUNCTION : attachClickEvents()------------ */
   // creates a loop through clickable elements
   // assign a click EVENT LISTENER to each clickable element
-  // compares and matches the index of the array of clickable elements with the index of the array returned by the API
+  // compares and MATCHES the index of the array of clickable elements with the index of the array returned by the API
   // encloses the HTML content of the overlay in a variable with the dynamic parts entrusted to template literals
-  // encloses the HTML content of the overlay in a variable
+  // replace the "template litterals" with the values obtained from the api
 
   function attachClickEvents() {
     const clickableList = getClickableList();
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
           /* ---------------------EVENT LISTENER : goBack button------------ */
           // remove the overlay
           // makes the body empty again
-          // show the mainPageùs content
+          // show the mainPage's content
 
           const goBackBtn = document.getElementById("goBackBtn");
           if (goBackBtn) {
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ---------------------FUNCTION : attachHoverEvents()------------ */
-  // creates 2 EVENT LISTENER (mouseover,mouseon) to handle the planets name preview
+  // creates 2 EVENT LISTENER (mouseover,mouseout) to handle the planets name preview
   // creates a container where to place the preview
   // uses a similar method used in click event listener
 
@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ---------------------FUNCTION : generateStarField(------------ */
+  /* ---------------------FUNCTION : generateStarField()------------ */
   // creats 100 stars and distributes them in the created container in random position and size (getRandomNumber())
 
   function generateStarField() {
