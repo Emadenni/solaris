@@ -4,25 +4,27 @@ let selectedPlanet;
 const startBtn = document.querySelector("#startButton");
 const intro = document.querySelector("#introContainer");
 const mainPage = document.querySelector(".mainContainer");
+const spaceSound = document.getElementById("spaceSound");
 
 /* --------------------- main event/page load-------------------- */
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* --------------------- EVENT LISTENER: intro/start button ------------ */
+/* --------------------- EVENT LISTENER: intro/start button ------------ */
 
   startBtn.addEventListener("click", () => {
     intro.style.display = "none";
     mainPage.style.display = "block";
+    
+    if (spaceSound) {
+      spaceSound.play(); //play a sound when a planet infos are showed
+    }
   });
+  
   getClickableList();
   getPlanetInfo();
   generateStarField();
 
-  const spaceSound = document.getElementById("spaceSound");
-  spaceSound.addEventListener("canplaythrough", () => {
-    console.log("Audio ready");
-  });
-
+   
   /* --------------------- ASYNC FUNCTION : getApyKey()------------ */
   //obtains and returns the keys to the API
   async function getApiKey() {
@@ -65,12 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "x-zocom": apiKey },
       });
 
-      if (!response.ok) {
-        throw new Error(`Error during Api request. Status: ${response.status}`);
-      }
-
       const data = await response.json();
 
+  /* -----------------------------if-else----------------------- */
+      //Checks if data.bodies exists and if it is an array
+      //If answer is positive then executes the functions
       if (data.bodies && Array.isArray(data.bodies)) {
         planetData = data.bodies;
         console.log("Received data:", planetData);
@@ -78,6 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
         attachHoverEvents();
       } else {
         console.error("Invalid data format from API");
+      }
+
+
+      if (!response.ok) {
+        throw new Error(`Error during Api request. Status: ${response.status}`);
       }
     } catch (error) {
       console.error("Main error:", error);
@@ -107,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
           selectedPlanet = planetData[index];
           console.log("Selected Planet:", selectedPlanet);
 
-          const overlayContent = `  <div class="overlay" id="pageOverlay">
+        const overlayContent = `  <div class="overlay" id="pageOverlay">
             <button id="goBackBtn">&leftarrow;</button>
             <div class=" planetsImg  ${selectedPlanet.name.toLowerCase()}"></div>
             ${
@@ -158,9 +164,12 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>`;
 
           //makes the body empty and fills it with the generated overlay
-
           document.body.innerHTML = "";
           document.body.innerHTML = overlayContent;
+          if (spaceSound) {
+            spaceSound.play(); //play a sound when a planet infos are showed
+          }
+
 
           /* ---------------------EVENT LISTENER : goBack button------------ */
           // remove the overlay
@@ -177,6 +186,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.body.appendChild(mainPage);
                 generateStarField(); //re-creates stars bkg for the mainPage
               }
+
+            
             });
           }
           generateStarField(); //create stars bkg for the overlay
