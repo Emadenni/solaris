@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="detailType1">
                   <div class="details">
                     <h3>OMKRETS</h2>
-                    <P>${selectedPlanet.circumference}</P>
+                    <P>${selectedPlanet.circumference} Km</P>
                   </div>
                   <div class="details ">
                     <h3>MAX TEMPERATUR</h2>
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="detailType2">
                   <div class="details">
                     <h3>KM FRÅN SOLEN</h2>
-                    <P>${selectedPlanet.distance}</P>
+                    <P>${selectedPlanet.distance} Km</P>
                   </div>
                   <div class="details">
                     <h3>MIN TEMPERATUR</h2>
