@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   </div>
                   <div class="details ">
                     <h3>MAX TEMPERATUR</h2>
-                    <P>${selectedPlanet.temp.day}</P>
+                    <P>${selectedPlanet.temp.day} C</P>
                   </div>
                 </div>
                 <div class="detailType2">
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   </div>
                   <div class="details">
                     <h3>MIN TEMPERATUR</h2>
-                    <P>${selectedPlanet.temp.night}</P>
+                    <P>${selectedPlanet.temp.night} C</P>
                   </div>
                 </div>
               </div>
